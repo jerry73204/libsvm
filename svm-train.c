@@ -102,6 +102,40 @@ int main(int argc, char **argv)
 	}
 	else
 	{
+              printf(
+                  "{\n"
+                  "    svm_type: %d\n"
+                  "    kernel_type: %d\n"
+                  "    degree: %d\n"
+                  "    gamma: %f\n"
+                  "    coef0: %f\n"
+                  "    cache_size: %f\n"
+                  "    eps: %f\n"
+                  "    C: %f\n"
+                  "    nr_weight: %d\n"
+                  "    weight_label: %p\n"
+                  "    weight: %p\n"
+                  "    nu: %f\n"
+                  "    p: %f\n"
+                  "    shrinking: %d\n"
+                  "    probability: %d\n"
+                  "}\n",
+                  param.svm_type,
+                  param.kernel_type,
+                  param.degree,
+                  param.gamma,
+                  param.coef0,
+                  param.cache_size,
+                  param.eps,
+                  param.C,
+                  param.nr_weight,
+                  param.weight_label,
+                  param.weight,
+                  param.nu,
+                  param.p,
+                  param.shrinking,
+                  param.probability
+                  );
 		model = svm_train(&prob,&param);
 		if(svm_save_model(model_file_name,model))
 		{
